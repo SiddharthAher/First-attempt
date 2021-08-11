@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live letters Counter</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container">
+       <h2>Live Character and Word Counter</h2>    
+    </div>
+   
+    <div>
+        <textarea cols="50" rows="10" id="words" oninput="countchar()"
+        placeholder="enter a text"></textarea>
+        </textarea>
+        
+   
+    
+        <p id= "showdata"></p>
+        <p id= "showwordscount"></p>
+     <p id="charNum"> 400 characters remaining></p>
+        
+    <br>
+       
+      
+    </div>
+    <script>
+        const countchar =() => {
+            var maxLength = 400;
+            var strLength = words.value.length
+            var charRemain =(maxLength - strLength);
+
+            if(charRemain < 0){
+                document.getElementById("charNum").innerHTML = '<span style="color: red;">You have exceeded the limit of '+maxLength+' characters</span>';
+            } else {
+                document.getElementById("charNum").innerHTML = charRemain+' out of 400 character';
+            }
+            
+            let noc = document.getElementById('words').value.length;
+            let now = document.getElementById('words').value;
+
+              
+            now= now.match(/\w+/g );    
+            now= now.length;
+            console.log(now);
+           
+            document.getElementById('showdata').innerHTML = "character " + noc;
+            document.getElementById('showwordscount').innerHTML = "words " + now;
+           // document.getElementById("textbox").innerHTML = noc + ' out of 400 characters';
+
+           
+
+
+
+            }
+          
+         //   function myFunction(){
+           //     if(now.replace(/\s/g, "").length <= 0)
+               
+             //   document.getElementById('words').innerHTML = now;
+           // }
+       /*   
+       
+        <button onclick="countchar()">start button</button></button>
+       
+       function countChars(obj){
+    var maxLength = 20;
+    var strLength = obj.value.length;
+    var charRemain = (maxLength - strLength);
+    
+    if(charRemain < 0){
+        document.getElementById("words").innerHTML = '<span style="color: red;">You have exceeded the limit of '+maxLength+' characters</span>';
+    }else{
+        document.getElementById("words").innerHTML = charRemain+' characters remaining';
+    }
+}
+function countChars(obj){
+    var maxLength = 20;
+    var strLength = obj.value.length;
+    var charRemain = (maxLength - strLength);
+    
+    if(charRemain < 0){
+        document.getElementById("charNum").innerHTML = '<span style="color: red;">You have exceeded the limit of '+maxLength+' characters</span>';
+    }else{
+        document.getElementById("charNum").innerHTML = charRemain+' characters remaining';
+    }
+
+                
+           
+            
+// alert(noc);
+*/
+/*function charcountupdate(str) {
+	var lng = str.length;
+	document.getElementById("charcount").innerHTML = lng + ' out of 400 characters';
+}
+        */
+
+    </script>
+</body>
+</html>
+
